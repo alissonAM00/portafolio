@@ -1,10 +1,20 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+ <NavBar/>
   <router-view/>
+  <FooterComp/>
 </template>
+
+<script>
+import NavBar from '@/components/NavBar.vue'
+import FooterComp from '@/components/FooterComp.vue'
+export default {
+  name: 'App',
+  components: {
+    NavBar,
+    FooterComp
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
@@ -12,19 +22,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color:antiquewhite;
+}
+  body, html {
+  background: rgb(37,4,71);
+  background: radial-gradient(circle, rgba(37,4,71,1) 0%, rgba(9,9,121,0.8941701680672269) 45%, rgba(0,212,255,1) 100%);
+  
 }
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
